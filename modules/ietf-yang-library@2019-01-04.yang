@@ -155,7 +155,13 @@
             situation where a module deviates itself (directly or
             indirectly) gracefully.";
        }
+       leaf-list augmentation {
+         type leafref {
+           path "../../module/name";
+         }
+       }
      }
+     
 
      grouping module-set-parameters {
        description
@@ -442,6 +448,14 @@
              status deprecated;
            }
          }
+         list augmentation {
+           key "name revision";
+           status deprecated;
+           uses common-leafs {
+             status deprecated;
+           }
+         }
+
          leaf conformance-type {
            type enumeration {
              enum implement {

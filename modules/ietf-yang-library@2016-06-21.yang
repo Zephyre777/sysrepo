@@ -152,6 +152,10 @@ module ietf-yang-library {
            the deviation module.";
         uses common-leafs;
       }
+      list augmentation {
+        key "name revision";
+        uses common-leafs;
+      }
       leaf conformance-type {
         type enumeration {
           enum implement {
