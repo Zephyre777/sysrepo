@@ -59,7 +59,7 @@
 #else
 # error "Unknown yang-library revision!"
 #endif
-
+#include "../modules/ietf_yang_library_augmentedby@2023_10_27_yang.h"
 #include "../modules/ietf_netconf_notifications_yang.h"
 #include "../modules/ietf_netconf_with_defaults_yang.h"
 #include "../modules/ietf_netconf_yang.h"
@@ -990,6 +990,9 @@ sr_lydmods_create(sr_conn_ctx_t *conn, struct ly_ctx *ly_ctx, struct lyd_node **
 
     /* install ietf-yang-library */
     SR_INSTALL_INT_MOD(ly_ctx, ietf_yang_library_yang, 0, new_mods, new_mod_count);
+
+    /* install ietf-yang-library-augmentedby */
+    SR_INSTALL_INT_MOD(ly_ctx, ietf_yang_library_augmentedby_yang, 0, new_mods, new_mod_count);
 
     /* install sysrepo-monitoring */
     SR_INSTALL_INT_MOD(ly_ctx, sysrepo_monitoring_yang, 0, new_mods, new_mod_count);
